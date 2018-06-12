@@ -1,13 +1,15 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import Series from '../../containers/Series';
 import SingleSeries from '../../containers/SingleSeries';
 
 const Main = props => (
-    <Switch>
-        <Route exact path={process.env.PUBLIC_URL + '/'} component={Series} />
-        <Route path={process.env.PUBLIC_URL + '/series/:id'} component={SingleSeries} />
-    </Switch>
+    <HashRouter>
+        <Switch>
+            <Route exact path='/' component={Series} />
+            <Route path='/series/:id' component={SingleSeries} />
+        </Switch>
+    </HashRouter>
 );
 
 export default Main;
