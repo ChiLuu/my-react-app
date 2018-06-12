@@ -20,6 +20,7 @@ class Series extends Component {
             isFetching: true
         });
 
+        // fetch(`https://api.tvmaze.com/search/shows?q=${event.target.value}`, {mode: 'cors'})  Use for CORS
         fetch(`https://api.tvmaze.com/search/shows?q=${event.target.value}`)
             .then( response => response.json() )
             .then( json => this.setState({
